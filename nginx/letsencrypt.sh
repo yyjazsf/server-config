@@ -6,7 +6,9 @@ acme.sh  --upgrade  --auto-upgrade
 # https://ak-console.aliyun.com/#/accesskey
 # export Ali_Key=""
 # export Ali_Secret=""
-acme.sh  --issue -d yingyj.com  -d '*.yingyj.com'  --dns dns_ali
+acme.sh --issue --dns dns_ali \
+    -d yingyj.com -d "*.yingyj.com" \
+    -d codecloud.icu -d "*.codecloud.icu"
 
 cd ~/.acme.sh/
 
