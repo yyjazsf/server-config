@@ -31,10 +31,22 @@ hg update quic
 # --with-http_v3_module     - enable QUIC and HTTP/3
 # --with-http_quic_module   - enable QUIC for older HTTP versions
 # --with-stream_quic_module - enable QUIC in Stream
-./auto/configure --with-debug --with-http_v3_module --with-http_quic_module --with-stream_quic_module \
-    --with-stream=dynamic --with-http_addition_module --with-http_mp4_module \
-    --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log \
-    --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid \
+./auto/configure --with-debug \
+     --with-http_addition_module \
+    --prefix=/mnt/1725a/appdata/nginx --sbin-path=/usr/sbin/nginx \
+    --user=yyj --group=yyj \
+    --with-http_v3_module \
+    --with-http_quic_module \
+    --with-stream=dynamic \
+    --with-stream_quic_module \
+    --with-stream_ssl_module \
+    --with-http_perl_module=dynamic \
+    --with-file-aio \
+    --with-http_gzip_static_module \
+    --with-http_ssl_module \
+    --with-http_geoip_module \
+    --with-http_flv_module \
+    --with-http_mp4_module \
     --with-cc-opt="-I../boringssl/include" \
     --with-ld-opt="-L../boringssl/build/ssl -L../boringssl/build/crypto"
 make -j$(nproc)
