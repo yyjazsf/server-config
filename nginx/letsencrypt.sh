@@ -13,6 +13,6 @@ acme.sh --issue --dns dns_ali \
 cd ~/.acme.sh/
 
 acme.sh --install-cert -d yingyj.com \
---key-file       /etc/nginx/ssl/yingyj.com/key.pem  \
---fullchain-file /etc/nginx/ssl/yingyj.com/fullchain.pem \
+--key-file       /mnt/1725a/appdata/nginx/ssl/yingyj.com/key.pem  \
+--fullchain-file /mnt/1725a/appdata/nginx/ssl/yingyj.com/fullchain.pem \
 --reloadcmd     "service nginx force-reload"

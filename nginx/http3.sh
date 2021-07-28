@@ -36,19 +36,21 @@ hg update quic
     --prefix=/mnt/1725a/appdata/nginx --sbin-path=/usr/sbin/nginx \
     --user=yyj --group=yyj \
     --with-http_v3_module \
+    --with-http_v2_module \
+    --with-http_ssl_module \
     --with-http_quic_module \
-    --with-stream=dynamic \
     --with-stream_quic_module \
     --with-stream_ssl_module \
+    --with-stream=dynamic \
     --with-http_perl_module=dynamic \
     --with-file-aio \
     --with-http_gzip_static_module \
-    --with-http_ssl_module \
     --with-http_geoip_module \
     --with-http_flv_module \
     --with-http_mp4_module \
     --with-cc-opt="-I../boringssl/include" \
     --with-ld-opt="-L../boringssl/build/ssl -L../boringssl/build/crypto"
+
 make -j$(nproc)
 sudo make install
 
