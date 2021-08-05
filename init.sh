@@ -24,4 +24,4 @@ nvm install --lts
 npm i -g npm
 npm install -g yarn
 # install google's tool https://github.com/google/zx
-yarn global add zx
+# yarn global add zx
