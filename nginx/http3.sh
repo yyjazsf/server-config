@@ -27,6 +27,7 @@ ninja
 
 hg clone https://hg.nginx.org/nginx-quic
 cd nginx-quic
+hg pull
 hg update quic
 # --with-http_v3_module     - enable QUIC and HTTP/3
 # --with-http_quic_module   - enable QUIC for older HTTP versions
@@ -40,6 +41,8 @@ hg update quic
     --with-http_ssl_module \
     --with-http_quic_module \
     --with-stream_quic_module \
+    --with-http_ssl_module \
+    --with-stream=dynamic \
     --with-stream_ssl_module \
     --with-stream=dynamic \
     --with-http_perl_module=dynamic \
@@ -53,6 +56,8 @@ hg update quic
 
 make -j$(nproc)
 sudo make install
+
+
 
 # 测试页面
 # https://http3check.net/
